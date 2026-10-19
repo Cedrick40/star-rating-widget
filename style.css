@@ -1,0 +1,79 @@
+:root {
+  --bg: #eaf1ff;
+  --card: #ffffff;
+  --ink: #0b2a5b;
+  --muted: #4a6491;
+  --line: #bcd0f2;
+  --empty: #c9d8f3;
+  --preview: #6d96f0;
+  --blue: #1d4ed8;
+  --blue-dark: #1e3a8a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 2.25rem 1.75rem;
+  box-shadow: 0 16px 40px rgba(29, 78, 216, .12);
+}
+
+h1 { font-size: clamp(1.5rem, 4vw, 1.9rem); font-weight: 800; letter-spacing: -0.02em; }
+.intro { color: var(--muted); margin-top: .25rem; }
+
+.stars { display: flex; justify-content: center; gap: .35rem; margin: 1.75rem 0 1rem; }
+
+.star {
+  width: clamp(48px, 14vw, 64px);
+  height: clamp(48px, 14vw, 64px);
+  padding: 4px;
+  background: none;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--empty);                      /* empty star */
+  transition: color .15s ease, transform .15s ease;
+}
+.star svg { width: 100%; height: 100%; fill: currentColor; stroke: currentColor; stroke-width: 1; stroke-linejoin: round; }
+
+.star.filled { color: var(--blue); }                        /* selected rating: solid blue */
+.stars.previewing .star.filled { color: var(--preview); }   /* hover preview: lighter blue */
+.star:hover { transform: scale(1.12); }
+.star:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+.rating-text { min-height: 1.5rem; font-weight: 600; }
+
+.reset {
+  margin-top: 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--blue);
+  background: transparent;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: .6rem 1.4rem;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease;
+}
+.reset:hover:not(:disabled) { background: var(--blue); color: #fff; }
+.reset:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.reset:disabled { opacity: .45; cursor: not-allowed; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Star Rating Widget</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Rate your experience</h1>
+    <p class="intro">Click a star to choose a rating from 1 to 5.</p>
+
+    <div class="stars" id="stars" role="radiogroup" aria-label="Star rating">
+      <button type="button" class="star" role="radio" aria-checked="false" aria-label="1 star" data-value="1"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></button>
+      <button type="button" class="star" role="radio" aria-checked="false" aria-label="2 stars" data-value="2"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></button>
+      <button type="button" class="star" role="radio" aria-checked="false" aria-label="3 stars" data-value="3"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></button>
+      <button type="button" class="star" role="radio" aria-checked="false" aria-label="4 stars" data-value="4"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></button>
+      <button type="button" class="star" role="radio" aria-checked="false" aria-label="5 stars" data-value="5"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></button>
+    </div>
+
+    <p class="rating-text" id="rating-text" role="status" aria-live="polite">No rating yet. Click a star.</p>
+    <button type="button" class="reset" id="reset" disabled>Clear rating</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
